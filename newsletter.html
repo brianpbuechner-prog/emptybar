@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hastings Progressives Newsletter — July 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: #E8E2D4;
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: #2A2018;
+  }
+
+  .email-wrapper {
+    max-width: 620px;
+    margin: 32px auto;
+    background: #F5F0E8;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #1E3A5F;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-sun {
+    width: 100%;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .sun-rays {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    height: 170px;
+    border-radius: 170px 170px 0 0;
+    background: linear-gradient(
+      to bottom,
+      #C44B2B 0%,
+      #C44B2B 14%,
+      #D06025 14%,
+      #D06025 28%,
+      #E8823A 28%,
+      #E8823A 42%,
+      #F0A830 42%,
+      #F0A830 56%,
+      #F5C842 56%,
+      #F5C842 70%,
+      #A8D4D0 70%,
+      #A8D4D0 100%
+    );
+  }
+
+  .bridge-arch {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 80px;
+  }
+
+  .header-org-name {
+    position: relative;
+    z-index: 10;
+    padding: 12px 24px 24px;
+    background: #1E3A5F;
+  }
+
+  .header-tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #A8D4D0;
+    margin-bottom: 6px;
+  }
+
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #F5F0E8;
+    line-height: 1.1;
+    text-shadow: 3px 3px 0 #C44B2B, 6px 6px 0 #E8823A;
+    letter-spacing: -0.5px;
+  }
+
+  .header-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: #A8D4D0;
+    margin-top: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── INTRO BAND ── */
+  .intro-band {
+    background: #2A6B7C;
+    padding: 14px 32px;
+    text-align: center;
+  }
+
+  .intro-band p {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #F5F0E8;
+    line-height: 1.6;
+  }
+
+  /* ── SECTION STYLES ── */
+  .section {
+    padding: 28px 36px;
+    border-bottom: 1px solid #DDD5C4;
+  }
+
+  .section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #F5F0E8;
+    background: #C44B2B;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .section-eyebrow.teal { background: #2A6B7C; }
+  .section-eyebrow.gold { background: #D4891A; }
+  .section-eyebrow.navy { background: #1E3A5F; }
+
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1E3A5F;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .section p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #3A2E22;
+  }
+
+  .section p + p {
+    margin-top: 10px;
+  }
+
+  /* ── SPOTLIGHT BOX ── */
+  .spotlight-box {
+    background: #EDE6D6;
+    border-left: 4px solid #E8823A;
+    padding: 16px 20px;
+    margin-top: 16px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .spotlight-box p {
+    font-size: 14px;
+    color: #3A2E22;
+    line-height: 1.7;
+  }
+
+  /* ── CTA BUTTON ── */
+  .cta-wrap {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #C44B2B;
+    color: #F5F0E8 !important;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    padding: 13px 30px;
+    border-radius: 3px;
+    box-shadow: 4px 4px 0 #8B2515;
+    transition: transform 0.1s;
+  }
+
+  .cta-button:hover {
+    transform: translate(-1px, -1px);
+  }
+
+  .cta-secondary {
+    display: block;
+    margin-top: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #2A6B7C;
+    text-decoration: underline;
+  }
+
+  /* ── WATCHING LIST ── */
+  .watch-item {
+    padding: 14px 0;
+    border-bottom: 1px dashed #CCC5B4;
+  }
+
+  .watch-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .watch-item-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #1E3A5F;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .watch-item p {
+    font-size: 14px;
+    color: #3A2E22;
+    line-height: 1.65;
+  }
+
+  /* ── VOLUNTEER CALLOUT ── */
+  .volunteer-strip {
+    background: #F0A830;
+    padding: 18px 36px;
+    text-align: center;
+  }
+
+  .volunteer-strip p {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1E3A5F;
+    line-height: 1.4;
+  }
+
+  .volunteer-strip .reply-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #1E3A5F;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* ── CONNECT SECTION ── */
+  .connect-section {
+    background: #1E3A5F;
+    padding: 24px 36px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+
+  .connect-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(168, 212, 208, 0.4);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #A8D4D0;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #2A2018;
+    padding: 20px 36px;
+    text-align: center;
+  }
+
+  .footer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: #9A9080;
+    line-height: 1.8;
+  }
+
+  .footer a {
+    color: #A8D4D0;
+    text-decoration: none;
+  }
+
+  /* Bridge SVG */
+  svg.bridge {
+    width: 320px;
+    height: 80px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="email-wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-sun">
+      <div class="sun-rays"></div>
+      <!-- Bridge arch SVG -->
+      <svg class="bridge" viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);">
+        <!-- Water -->
+        <rect x="0" y="58" width="320" height="22" fill="#1E3A5F" opacity="0.6"/>
+        <!-- Bridge deck -->
+        <rect x="10" y="54" width="300" height="5" fill="#1E3A5F" rx="1"/>
+        <!-- Main arch -->
+        <path d="M 30 54 Q 160 -10 290 54" stroke="#1E3A5F" stroke-width="3.5" fill="none"/>
+        <!-- Suspender cables - left -->
+        <line x1="80" y1="24" x2="80" y2="54" stroke="#1E3A5F" stroke-width="1.2" opacity="0.7"/>
+        <line x1="105" y1="13" x2="105" y2="54" stroke="#1E3A5F" stroke-width="1.2" opacity="0.7"/>
+        <line x1="130" y1="6" x2="130" y2="54" stroke="#1E3A5F" stroke-width="1.2" opacity="0.7"/>
+        <!-- Suspender cables - right -->
+        <line x1="190" y1="6" x2="190" y2="54" stroke="#1E3A5F" stroke-width="1.2" opacity="0.7"/>
+        <line x1="215" y1="13" x2="215" y2="54" stroke="#1E3A5F" stroke-width="1.2" opacity="0.7"/>
+        <line x1="240" y1="24" x2="240" y2="54" stroke="#1E3A5F" stroke-width="1.2" opacity="0.7"/>
+        <!-- Piers -->
+        <rect x="20" y="52" width="10" height="28" fill="#1E3A5F" rx="1"/>
+        <rect x="290" y="52" width="10" height="28" fill="#1E3A5F" rx="1"/>
+      </svg>
+    </div>
+    <div class="header-org-name">
+      <div class="header-tagline">Peace · Love · Hastings</div>
+      <div class="header-title">Hastings<br>Progressives</div>
+      <div class="header-meta">July 2026 &nbsp;·&nbsp; Issue #1</div>
+    </div>
+  </div>
+
+  <!-- INTRO BAND -->
+  <div class="intro-band">
+    <p>Democracy doesn't protect itself. But Hastings does.</p>
+  </div>
+
+  <!-- THE MOMENT -->
+  <div class="section">
+    <div class="section-eyebrow">📍 The Moment</div>
+    <h2>Your vote in Hastings is worth fighting for</h2>
+    <p>Across Minnesota and the country, access to the ballot is being quietly narrowed — through purged voter rolls, reduced polling locations, and legislation designed to make registration harder. We're watching it closely so you don't have to watch it alone.</p>
+    <p>This issue, we're focused on what's happening to voting rights — and what you can do about it right now from your Hastings zip code.</p>
+  </div>
+
+  <!-- LOCAL SPOTLIGHT -->
+  <div class="section">
+    <div class="section-eyebrow teal">🌉 Local Spotlight</div>
+    <h2>Hastings shows up</h2>
+    <p>Dakota County processes thousands of voter registrations every election cycle — and Hastings residents are among those most affected when the system works well, and when it doesn't.</p>
+    <div class="spotlight-box">
+      <p><strong>This fall, Hastings Progressives will be tabling at local community events</strong> to help neighbors check their registration status, find their polling location, and get their questions answered — no pressure, no pitch, just neighbors helping neighbors.</p>
+    </div>
+  </div>
+
+  <!-- VOLUNTEER STRIP -->
+  <div class="volunteer-strip">
+    <p>We need volunteers for two-hour tabling shifts.</p>
+    <p class="reply-note">Reply to this email if you're in — or forward it to someone who should be.</p>
+  </div>
+
+  <!-- TAKE ACTION -->
+  <div class="section">
+    <div class="section-eyebrow gold">✊ Take Action This Week</div>
+    <h2>Check your registration. Then share it.</h2>
+    <p>Takes 90 seconds. Actually matters.</p>
+    <div class="cta-wrap">
+      <a href="https://mnvotes.sos.state.mn.us" class="cta-button">Check Your MN Registration →</a>
+      <span class="cta-secondary">Then forward this link to three Hastings neighbors</span>
+    </div>
+  </div>
+
+  <!-- WHAT WE'RE WATCHING -->
+  <div class="section">
+    <div class="section-eyebrow navy">👁 What We're Watching</div>
+    <h2>Three things on our radar</h2>
+
+    <div class="watch-item">
+      <div class="watch-item-title">Federal Voting Legislation</div>
+      <p>Bills in Congress would impose new federal ID requirements and restrict same-day registration. Minnesota's same-day registration is one of the strongest in the country — we're tracking any attempt to override state protections.</p>
+    </div>
+
+    <div class="watch-item">
+      <div class="watch-item-title">MN Legislative Session</div>
+      <p>State lawmakers have debated automatic voter registration and expanded early voting access. We'll keep you posted on what passed, what stalled, and what's coming back next session.</p>
+    </div>
+
+    <div class="watch-item">
+      <div class="watch-item-title">Election Administration Funding</div>
+      <p>Local clerks and county election offices are underfunded heading into a heavy election cycle. Unglamorous but important. We're paying attention so you can hold your local officials accountable.</p>
+    </div>
+  </div>
+
+  <!-- CONNECT -->
+  <div class="connect-section">
+    <a href="#" class="connect-pill">📅 Next Meeting</a>
+    <a href="#" class="connect-pill">👕 Merch Coming Soon</a>
+    <a href="#" class="connect-pill">📨 Refer a Friend</a>
+    <a href="#" class="connect-pill">🗳 Volunteer to Table</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      Hastings Progressives &nbsp;·&nbsp; Hastings, MN<br>
+      A nonpartisan civic organization dedicated to progressive values and community engagement.<br>
+      We do not endorse candidates.<br><br>
+      You're receiving this because you signed up or attended one of our events.<br>
+      <a href="#">Unsubscribe</a> &nbsp;·&nbsp; <a href="#">Update preferences</a>
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
